@@ -12,7 +12,7 @@ public class BirdScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         pajaro = GetComponent<Rigidbody2D>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,14 +25,14 @@ public class BirdScript : MonoBehaviour {
             }
             pajaro.transform.Translate(new Vector3(1, 0, 0) * forwardSpeed * Time.deltaTime);
             cam.transform.Translate(new Vector3(1, 0, 0) * forwardSpeed * Time.deltaTime);
-           // if (pajaro.position.Translate(16, 0, 0)) 
-           // {
-           //     dead = true;
-           // }
+            if (transform.position.x >= 52.31)
+            {
+                dead = true;
+            }
         }
 
 	}
-
+ 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         dead = true;
